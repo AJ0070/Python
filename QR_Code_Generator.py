@@ -27,3 +27,4 @@ save_path = file_location + file_name
 img.save(save_path)
 
 print(f"QR code saved to {save_path}")
+    
