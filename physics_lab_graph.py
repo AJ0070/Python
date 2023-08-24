@@ -1,61 +1,36 @@
+n = int(input("Enter the number of data points: "))
+x_values = []
+y_values = []
 
+for i in range(n):
+    x = float(input(f"Enter x{i+1}: "))
+    y = float(input(f"Enter y{i+1}: "))
+    x_values.append(x)
+    y_values.append(y)
 
-x1=float(input("Enter x1:"))
-x2=float(input("Enter x2:"))
-x3=float(input("Enter x3:"))
-x4=float(input("Enter x4:"))
-x5=float(input("Enter x5:"))
-x6=float(input("Enter x6:"))
-x7=float(input("Enter x7:"))
-x_sum = x1+x2+x3+x4+x5+x6+x7
+x_sum = sum(x_values)
+y_sum = sum(y_values)
 
+multiplication_1 = sum(x * y for x, y in zip(x_values, y_values))
+sum_xsq = sum(x ** 2 for x in x_values)
+sum_xwsq = x_sum ** 2
 
-y1=float(input("Enter y1:"))
-y2=float(input("Enter y2:"))
-y3=float(input("Enter y3:"))
-y4=float(input("Enter y4:"))
-y5=float(input("Enter y5:"))
-y6=float(input("Enter y6:"))
-y7=float(input("Enter y7:"))
-y_sum=y1+y2+y3+y4+y5+y6+y7
+u = n * multiplication_1 - x_sum * y_sum
+v = n * sum_xsq - sum_xwsq
 
-multiplication_1= x1*y1+x2*y2+x3*y3+x4*y4+x5*y5+x6*y6+x7*y7
-mu=multiplication_1
+if x_values[4] != 0:
+    n = 5
+elif x_values[5] != 0:
+    n = 6
+else:
+    n = 7
 
-sum_xsq= x1*x1+x2*x2+x3*x3+x4*x4+x5*x5+x6*x6+x7*x7
-xs=sum_xsq
+m = u / v
 
-sum_xwsq=x_sum**2
-xw= sum_xwsq
-
-if x5!=0:
-    n=5
-
-
-  
-
-if x6==0:
-    n=5
-else :
-    n=6
-
-
-if x7==0:
-    n=6
-else :
-    n=7    
-
-u = n*mu - x_sum*y_sum
-v=n * sum_xsq - sum_xwsq
-
-m = u /v 
-
-z=y_sum - m * x_sum
-
-c =  z/ n
+z = y_sum - m * x_sum
+c = z / n
 
 x = float(input("Enter the value of x: "))
-
 y = m * x + c
 
-print(y)
+print(f"The calculated y value for x={x} is {y}")
