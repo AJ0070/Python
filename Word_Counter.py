@@ -8,7 +8,7 @@ def word_counter(text):
     return word_count
 
 # Input text
-input_text = input("Enter a sentence or paragraph ")
+input_text = input("Enter a sentence or paragraph: ")
 
 # Calculate and display word count
 count = word_counter(input_text)
