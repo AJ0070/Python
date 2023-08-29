@@ -12,4 +12,4 @@ input_text = input("Enter a sentence or paragraph: ")
 
 # Calculate and display word count
 count = word_counter(input_text)
-print(f"Word Count: {count}")
+print(f"Word Count: {count")
