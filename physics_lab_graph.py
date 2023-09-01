@@ -8,7 +8,7 @@ for i in range(n):
     x_values.append(x)
     y_values.append(y)
 
-x_sum = sum(x_values)
+x_sum = sum(_values)
 y_sum = sum(y_values)
 
 multiplication_1 = sum(x * y for x, y in zip(x_values, y_values))
